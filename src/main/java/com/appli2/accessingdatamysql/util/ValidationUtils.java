@@ -114,7 +114,8 @@ public final class ValidationUtils {
             String category
     ) {
 
-        return CONTACT_CATEGORIES
+        return category != null
+                && CONTACT_CATEGORIES
                 .contains(category);
     }
 

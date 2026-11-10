@@ -26,3 +26,12 @@ jobs:
 
       - name: Compiler et tester
         run: ./gradlew clean test --no-daemon
+
+      - name: Afficher les erreurs detaillees
+        if: failure()
+        run: |
+          for f in build/test-results/test/TEST-*.xml; do
+            [ -f "$f" ] || continue
+            echo "=== $f ==="
+            sed -n '/<failure/,/<\/failure>/p' "$f" | head -n 70
+          done

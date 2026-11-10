@@ -12,11 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.TestPropertySource;
 
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@TestPropertySource(
+        properties = "spring.jpa.hibernate.ddl-auto=create-drop"
+)
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest(classes = AccessingDataMysqlApplication.class)
 @Transactional

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+            rel="stylesheet"
+            href="/styles/style.css"
+    >
+
+    <title>Mes contacts</title>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h1>Mes contacts</h1>
+
+    <div class="nav-actions">
+
+        <a href="/index.html">
+            Accueil
+        </a>
+
+        <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+        >
+            Se déconnecter
+        </button>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+    <div class="card">
+
+        <h2>Ajouter un contact</h2>
+
+
+        <form id="contact-form">
+
+            <input
+                    id="contact-name"
+                    type="text"
+                    placeholder="Nom"
+                    required
+            >
+
+            <input
+                    id="contact-email"
+                    type="email"
+                    placeholder="Adresse e-mail"
+                    required
+            >
+
+            <input
+                    id="contact-phone"
+                    type="tel"
+                    placeholder="Téléphone"
+                    required
+            >
+
+            <select
+                    id="contact-category"
+                    required
+            >
+
+                <option value="Famille">
+                    Famille
+                </option>
+
+                <option value="Amis">
+                    Amis
+                </option>
+
+                <option value="Travail">
+                    Travail
+                </option>
+
+                <option value="Autre" selected>
+                    Autre
+                </option>
+
+            </select>
+
+            <input
+                    id="contact-company"
+                    type="text"
+                    placeholder="Entreprise"
+            >
+
+            <input
+                    id="contact-address"
+                    type="text"
+                    placeholder="Adresse"
+            >
+
+            <input
+                    id="contact-birthday"
+                    type="date"
+            >
+
+            <textarea
+                    id="contact-notes"
+                    placeholder="Notes"
+                    rows="4"
+            ></textarea>
+
+            <button
+                    class="add-button"
+                    type="submit"
+            >
+                Ajouter
+            </button>
+
+        </form>
+
+        <p id="contact-message"></p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Mes contacts</h2>
+
+
+        <div class="contact-toolbar">
+
+            <input
+                    id="contact-search"
+                    type="text"
+                    placeholder="Rechercher..."
+            >
+
+            <select
+                    id="contact-sort"
+                    class="sort-select"
+            >
+
+                <option value="AZ">
+                    Nom A → Z
+                </option>
+
+                <option value="ZA">
+                    Nom Z → A
+                </option>
+
+                <option value="FAVORITES">
+                    Favoris d'abord
+                </option>
+
+                <option value="CATEGORY">
+                    Catégorie
+                </option>
+
+                <option value="NEWEST">
+                    Plus récents
+                </option>
+
+                <option value="OLDEST">
+                    Plus anciens
+                </option>
+
+            </select>
+
+            <div class="csv-actions">
+
+                <button
+                        id="export-csv"
+                        class="export-button"
+                        type="button"
+                >
+                    Exporter CSV
+                </button>
+
+                <button
+                        id="import-csv"
+                        class="import-button"
+                        type="button"
+                >
+                    Importer CSV
+                </button>
+
+                <input
+                        id="csv-file-input"
+                        type="file"
+                        accept=".csv,text/csv"
+                        hidden
+                >
+
+            </div>
+
+        </div>
+
+        <div class="contact-filters">
+
+            <button
+                    id="filter-all"
+                    class="filter-button active-filter"
+                    type="button"
+            >
+                Tous
+            </button>
+
+            <button
+                    id="filter-favorites"
+                    class="filter-button"
+                    type="button"
+            >
+                Favoris ⭐
+            </button>
+
+            <button
+                    class="filter-button category-filter"
+                    data-category="Famille"
+                    type="button"
+            >
+                Famille
+            </button>
+
+            <button
+                    class="filter-button category-filter"
+                    data-category="Amis"
+                    type="button"
+            >
+                Amis
+            </button>
+
+            <button
+                    class="filter-button category-filter"
+                    data-category="Travail"
+                    type="button"
+            >
+                Travail
+            </button>
+
+            <button
+                    class="filter-button category-filter"
+                    data-category="Autre"
+                    type="button"
+            >
+                Autre
+            </button>
+
+        </div>
+
+        <p id="contacts-count"></p>
+
+
+        <button
+                id="refresh-contacts"
+                class="refresh-button"
+                type="button"
+        >
+            Actualiser
+        </button>
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>Contact</th>
+                <th>E-mail</th>
+                <th>Téléphone</th>
+                <th>Catégorie</th>
+                <th>Favori</th>
+                <th>Actions</th>
+            </tr>
+
+            </thead>
+
+            <tbody id="contacts-table-body">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+<script src="/scripts/auth.js" defer></script>
+<script src="/scripts/contacts.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+            rel="stylesheet"
+            href="/styles/style.css"
+    >
+
+    <title>Administration</title>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h1>Administration</h1>
+
+    <div class="nav-actions">
+
+        <a href="/index.html">
+            Accueil
+        </a>
+
+        <a href="/users.html">
+            Utilisateurs
+        </a>
+
+        <a href="/contacts.html">
+            Contacts
+        </a>
+
+        <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+        >
+            Se déconnecter
+        </button>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+    <section class="admin-heading">
+
+        <p class="home-label">
+            ADMINISTRATION
+        </p>
+
+        <h2>
+            Vue d'ensemble
+        </h2>
+
+        <p>
+            Statistiques globales de l'application.
+        </p>
+
+    </section>
+
+    <section class="admin-stats">
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Utilisateurs
+            </span>
+
+            <strong id="admin-total-users">
+                0
+            </strong>
+
+        </div>
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Comptes USER
+            </span>
+
+            <strong id="admin-users">
+                0
+            </strong>
+
+        </div>
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Administrateurs
+            </span>
+
+            <strong id="admin-admins">
+                0
+            </strong>
+
+        </div>
+
+        <div class="admin-stat-card admin-stat-primary">
+
+            <span class="admin-stat-label">
+                Contacts
+            </span>
+
+            <strong id="admin-total-contacts">
+                0
+            </strong>
+
+        </div>
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Favoris
+            </span>
+
+            <strong id="admin-favorites">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <h2>
+            Répartition des contacts
+        </h2>
+
+        <div class="admin-categories">
+
+            <div class="admin-category">
+
+                <span>
+                    Famille
+                </span>
+
+                <strong id="admin-family">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="admin-category">
+
+                <span>
+                    Amis
+                </span>
+
+                <strong id="admin-friends">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="admin-category">
+
+                <span>
+                    Travail
+                </span>
+
+                <strong id="admin-work">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="admin-category">
+
+                <span>
+                    Autre
+                </span>
+
+                <strong id="admin-other">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="admin-links">
+
+        <a
+                href="/users.html"
+                class="home-action-card"
+        >
+
+            <div class="home-action-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h2>
+                    Gérer les utilisateurs
+                </h2>
+
+                <p>
+                    Ajouter, modifier ou supprimer
+                    les comptes de l'application.
+                </p>
+
+                <span class="home-action-link">
+                    Ouvrir →
+                </span>
+
+            </div>
+
+        </a>
+
+        <a
+                href="/contacts.html"
+                class="home-action-card"
+        >
+
+            <div class="home-action-icon">
+                👥
+            </div>
+
+            <div>
+
+                <h2>
+                    Mes contacts
+                </h2>
+
+                <p>
+                    Accéder à mon carnet
+                    de contacts personnel.
+                </p>
+
+                <span class="home-action-link">
+                    Ouvrir →
+                </span>
+
+            </div>
+
+        </a>
+
+    </section>
+
+</main>
+
+<script src="/scripts/auth.js" defer></script>
+<script src="/scripts/admin.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+
+</html>

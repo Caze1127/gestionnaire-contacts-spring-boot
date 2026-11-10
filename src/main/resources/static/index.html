@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+            rel="stylesheet"
+            href="/styles/style.css"
+    >
+
+    <title>Accueil</title>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h1>Mon application</h1>
+
+    <button
+            id="logout-button"
+            class="logout-button"
+            type="button"
+    >
+        Se déconnecter
+    </button>
+
+</header>
+
+
+<main class="container">
+
+    <section class="home-welcome">
+
+        <div>
+
+            <p class="home-label">
+                TABLEAU DE BORD
+            </p>
+
+            <h2>
+                Bienvenue 👋
+            </h2>
+
+            <p id="user-info">
+                Chargement...
+            </p>
+
+        </div>
+
+        <div class="home-stats">
+
+            <div class="home-stat">
+
+                <span id="total-contacts">
+                    0
+                </span>
+
+                <p>
+                    Contacts
+                </p>
+
+            </div>
+
+            <div class="home-stat">
+
+                <span id="total-favorites">
+                    0
+                </span>
+
+                <p>
+                    Favoris
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="home-actions">
+
+        <a
+                href="/contacts.html"
+                class="home-action-card"
+        >
+
+            <div class="home-action-icon">
+                👥
+            </div>
+
+            <div>
+
+                <h2>
+                    Mes contacts
+                </h2>
+
+                <p>
+                    Ajouter, rechercher, classer et gérer mes contacts.
+                </p>
+
+                <span class="home-action-link">
+                Ouvrir mes contacts →
+            </span>
+
+            </div>
+
+        </a>
+
+        <a
+                href="/account.html"
+                class="home-action-card"
+        >
+
+            <div class="home-action-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h2>
+                    Mon compte
+                </h2>
+
+                <p>
+                    Modifier mes informations et mon mot de passe.
+                </p>
+
+                <span class="home-action-link">
+            Gérer mon compte →
+        </span>
+
+            </div>
+
+        </a>
+
+        <a
+                id="users-card"
+                href="/users.html"
+                class="home-action-card"
+                hidden
+        >
+
+            <div class="home-action-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h2>
+                    Gestion des utilisateurs
+                </h2>
+
+                <p>
+                    Administrer les comptes de l'application.
+                </p>
+
+                <span class="home-action-link">
+                Gérer les utilisateurs →
+            </span>
+
+            </div>
+
+        </a>
+
+        <a
+                id="admin-card"
+                href="/admin.html"
+                class="home-action-card"
+                hidden
+        >
+
+            <div class="home-action-icon">
+                📊
+            </div>
+
+            <div>
+
+                <h2>
+                    Dashboard administrateur
+                </h2>
+
+                <p>
+                    Consulter les statistiques globales de l'application.
+                </p>
+
+                <span class="home-action-link">
+                Voir le dashboard →
+            </span>
+
+            </div>
+
+        </a>
+
+    </section>
+
+    <section class="birthday-section">
+
+        <div class="birthday-header">
+
+            <div>
+
+                <p class="home-label">
+                    À VENIR
+                </p>
+
+                <h2>
+                    Anniversaires 🎂
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div
+                id="birthday-list"
+                class="birthday-list"
+        >
+
+            <p class="birthday-empty">
+                Aucun anniversaire prochainement.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="/scripts/auth.js" defer></script>
+<script src="/scripts/index.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+
+</html>

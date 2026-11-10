@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+            rel="stylesheet"
+            href="/styles/style.css"
+    >
+
+    <title>Contact</title>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h1>Fiche contact</h1>
+
+    <div class="nav-actions">
+
+        <a href="/contacts.html">
+            Retour aux contacts
+        </a>
+
+        <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+        >
+            Se déconnecter
+        </button>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+    <div class="contact-detail-card">
+
+
+        <div class="contact-detail-header">
+
+
+            <div class="contact-photo-wrapper">
+
+                <img
+                        id="contact-photo"
+                        class="contact-photo"
+                        alt="Photo du contact"
+                        hidden
+                >
+
+                <div
+                        id="contact-avatar"
+                        class="contact-avatar"
+                >
+
+                    <span id="contact-initial">
+                        ?
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="contact-detail-identity">
+
+                <h1 id="detail-name">
+                    Chargement...
+                </h1>
+
+                <p id="detail-category"></p>
+
+
+                <div class="photo-actions">
+
+                    <input
+                            id="photo-input"
+                            type="file"
+                            accept="image/*"
+                            hidden
+                    >
+
+                    <button
+                            id="choose-photo-button"
+                            class="photo-button"
+                            type="button"
+                    >
+                        Ajouter une photo
+                    </button>
+
+                    <button
+                            id="delete-photo-button"
+                            class="photo-delete-button"
+                            type="button"
+                    >
+                        Supprimer la photo
+                    </button>
+
+                </div>
+
+                <p id="photo-message"></p>
+
+            </div>
+
+        </div>
+
+        <div class="contact-detail-grid">
+
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    E-mail
+                </span>
+
+                <p id="detail-email">—</p>
+
+            </div>
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Téléphone
+                </span>
+
+                <p id="detail-phone">—</p>
+
+            </div>
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Entreprise
+                </span>
+
+                <p id="detail-company">—</p>
+
+            </div>
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Adresse
+                </span>
+
+                <p id="detail-address">—</p>
+
+            </div>
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Anniversaire
+                </span>
+
+                <p id="detail-birthday">—</p>
+
+            </div>
+
+            <div class="detail-item">
+
+                <span class="detail-label">
+                    Favori
+                </span>
+
+                <p id="detail-favorite">—</p>
+
+            </div>
+
+        </div>
+
+        <div class="contact-notes-section">
+
+            <span class="detail-label">
+                Notes
+            </span>
+
+            <p id="detail-notes">
+                Aucune note
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="/scripts/auth.js" defer></script>
+<script src="/scripts/contact-details.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+
+</html>

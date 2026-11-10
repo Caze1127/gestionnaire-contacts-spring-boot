@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+
+<body>
+
+<h1>Créer un compte</h1>
+
+<form id="register-form">
+
+    <input
+            id="register-name"
+            type="text"
+            placeholder="Nom"
+            required
+    >
+
+    <input
+            id="register-email"
+            type="email"
+            placeholder="Adresse e-mail"
+            required
+    >
+
+    <input
+            id="register-password"
+            type="password"
+            placeholder="Mot de passe"
+            minlength="8"
+            required
+    >
+
+    <button type="submit">
+        Créer mon compte
+    </button>
+
+    <button id="back-login-button" type="button">
+        Retour à la connexion
+    </button>
+
+</form>
+
+<p id="register-message"></p>
+
+<script src="scripts/register.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+</html>

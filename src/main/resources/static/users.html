@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+            rel="stylesheet"
+            href="/styles/style.css"
+    >
+
+    <title>Gestion des utilisateurs</title>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h1>Gestion des utilisateurs</h1>
+
+
+    <div class="nav-actions">
+
+        <a href="/index.html">
+            Accueil
+        </a>
+
+        <a href="/admin.html">
+            Dashboard admin
+        </a>
+
+        <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+        >
+            Se déconnecter
+        </button>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+
+    <div class="card">
+
+        <h2>
+            Ajouter un utilisateur
+        </h2>
+
+
+        <form id="user-form">
+
+            <input
+                    id="name"
+                    type="text"
+                    placeholder="Nom"
+                    required
+            >
+
+            <input
+                    id="email"
+                    type="email"
+                    placeholder="Adresse e-mail"
+                    required
+            >
+
+            <input
+                    id="password"
+                    type="password"
+                    placeholder="Mot de passe"
+                    required
+            >
+
+
+            <button
+                    class="add-button"
+                    type="submit"
+            >
+                Ajouter
+            </button>
+
+        </form>
+
+
+        <p id="message"></p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Liste des utilisateurs
+        </h2>
+
+
+        <button
+                id="refresh-users"
+                class="refresh-button"
+                type="button"
+        >
+            Actualiser
+        </button>
+
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Nom</th>
+
+                <th>E-mail</th>
+
+                <th>Rôle</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="users-table-body">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+<script src="/scripts/auth.js" defer></script>
+<script src="/scripts/users.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+
+</html>

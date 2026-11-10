@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+            rel="stylesheet"
+            href="/styles/style.css"
+    >
+
+    <title>Mon compte</title>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h1>Mon compte</h1>
+
+    <div class="nav-actions">
+
+        <a href="/index.html">
+            Accueil
+        </a>
+
+        <a href="/contacts.html">
+            Mes contacts
+        </a>
+
+        <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+        >
+            Se déconnecter
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="account-header">
+
+        <div class="account-avatar">
+
+            <span id="account-initial">
+                ?
+            </span>
+
+        </div>
+
+        <div>
+
+            <p class="home-label">
+                MON COMPTE
+            </p>
+
+            <h2 id="account-name">
+                Chargement...
+            </h2>
+
+            <p id="account-role"></p>
+
+        </div>
+
+    </section>
+
+    <div class="account-grid">
+
+        <div class="card">
+
+            <h2>
+                Informations personnelles
+            </h2>
+
+            <form
+                    id="profile-form"
+                    class="account-form"
+            >
+
+                <label for="account-name-input">
+                    Nom
+                </label>
+
+                <input
+                        id="account-name-input"
+                        type="text"
+                        required
+                >
+
+
+                <label for="account-email-input">
+                    Adresse e-mail
+                </label>
+
+                <input
+                        id="account-email-input"
+                        type="email"
+                        required
+                >
+
+                <button
+                        class="add-button"
+                        type="submit"
+                >
+                    Enregistrer
+                </button>
+
+            </form>
+
+            <p id="profile-message"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>
+                Changer le mot de passe
+            </h2>
+
+            <form
+                    id="password-form"
+                    class="account-form"
+            >
+
+                <label for="current-password">
+                    Mot de passe actuel
+                </label>
+
+                <input
+                        id="current-password"
+                        type="password"
+                        required
+                >
+
+                <label for="new-password">
+                    Nouveau mot de passe
+                </label>
+
+                <input
+                        id="new-password"
+                        type="password"
+                        required
+                >
+
+                <label for="confirm-password">
+                    Confirmer le nouveau mot de passe
+                </label>
+
+                <input
+                        id="confirm-password"
+                        type="password"
+                        required
+                >
+
+                <button
+                        class="add-button"
+                        type="submit"
+                >
+                    Modifier le mot de passe
+                </button>
+
+            </form>
+
+            <p id="password-message"></p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="/scripts/auth.js" defer></script>
+<script src="/scripts/account.js" defer></script>
+<script src="/scripts/theme.js" defer></script>
+
+</body>
+
+</html>

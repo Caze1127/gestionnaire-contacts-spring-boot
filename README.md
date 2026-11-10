@@ -45,34 +45,34 @@ L'application permet à chaque utilisateur authentifié d'organiser son propre c
 ### Accueil — modes clair et sombre
 
 <p align="center">
-  <img src="../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/accueil-clair.png" alt="Accueil en mode clair" width="49%" />
-  <img src="../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/accueil-sombre.png" alt="Accueil en mode sombre" width="49%" />
+  <img src="docs/screenshots/accueil-clair.png" alt="Accueil en mode clair" width="49%" />
+  <img src="docs/screenshots/accueil-sombre.png" alt="Accueil en mode sombre" width="49%" />
 </p>
 
 ### Gestion des contacts
 
-![Formulaire et liste de contacts](../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/liste-contacts.png)
+![Formulaire et liste de contacts](docs/screenshots/liste-contacts.png)
 
 Recherche, filtres par catégorie, favoris, actions de gestion et import/export CSV.
 
 ### Fiche d'un contact
 
-![Fiche détaillée d'un contact](../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/fiche-contact.png)
+![Fiche détaillée d'un contact](docs/screenshots/fiche-contact.png)
 
 ### Tableau de bord administrateur
 
-![Statistiques administrateur](../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/dashboard-administration.png)
+![Statistiques administrateur](docs/screenshots/dashboard-administration.png)
 
 <details>
 <summary><strong>Voir d'autres captures : comptes et utilisateurs</strong></summary>
 
 #### Gestion des utilisateurs
 
-![Gestion des utilisateurs](../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/gestion-utilisateurs.png)
+![Gestion des utilisateurs](docs/screenshots/gestion-utilisateurs.png)
 
 #### Gestion du compte
 
-![Gestion du compte](../faq/Projet%20info/gestionnaire-contacts-kit-github/docs/screenshots/mon-compte.png)
+![Gestion du compte](/docs/screenshots/mon-compte.png)
 
 </details>
 

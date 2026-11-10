@@ -9,9 +9,10 @@
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.1.0-6DB33F?logo=springboot&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-Build-02303A?logo=gradle&logoColor=white)
+[![Build et tests](https://github.com/Caze1127/gestionnaire-contacts-spring-boot/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Caze1127/gestionnaire-contacts-spring-boot/actions/workflows/test.yml)
 ![Frontend](https://img.shields.io/badge/HTML%20%7C%20CSS%20%7C%20JavaScript-Frontend-2563EB)
 
-[**Fonctionnalités**](#-fonctionnalités) · [**Captures**](#-aperçu-de-lapplication) · [**Installation**](#-installation-et-exécution) · [**Architecture**](#-architecture-du-projet)
+[**Fonctionnalités**](#-fonctionnalités) · [**Captures**](#-aperçu-de-lapplication) · [**Tests**](#-tests-automatisés-et-intégration-continue) · [**Installation**](#-installation-et-exécution) · [**Architecture**](#-architecture-du-projet)
 
 </div>
 
@@ -72,7 +73,7 @@ Recherche, filtres par catégorie, favoris, actions de gestion et import/export 
 
 #### Gestion du compte
 
-![Gestion du compte](/docs/screenshots/mon-compte.png)
+![Gestion du compte](docs/screenshots/mon-compte.png)
 
 </details>
 
@@ -137,6 +138,58 @@ SQL2/
 - `Contact` : coordonnées, catégorie, favori, notes, anniversaire, photo et utilisateur propriétaire.
 - `PasswordResetToken` : jeton temporaire associé à un compte, expirant au bout de 30 minutes.
 
+## 🧪 Tests automatisés et intégration continue
+
+Le projet dispose d'une suite de tests Java exécutée avec **JUnit Jupiter**, **Spring Boot Test** et, pour les tests nécessitant une base de données, **Testcontainers avec MySQL**.
+
+**Bilan de la campagne documentée : 163 tests exécutés.** Le workflow GitHub Actions **« Build et tests »** a ensuite été signalé comme **réussi** lors de son exécution n° 4, le **10 novembre 2026**. Le badge en haut de ce README reflète automatiquement les nouvelles exécutions de la branche `main`.
+
+### Périmètre des tests
+
+| Catégorie | Exemples de classes de tests | Objectif |
+|---|---|---|
+| **Contrôleurs HTTP / API** | `AdminControllerTest`, `AuthControllerTest`, `ContactControllerTest`, `MainControllerTest` | Vérifier les réponses des endpoints et les scénarios de requêtes |
+| **Services métier** | `ContactServiceTest`, `UserServiceTest`, `PasswordResetServiceTest`, `CustomUserDetailsServiceTest` | Tester les opérations et règles métier ainsi que les cas d'erreur |
+| **Sécurité** | `SecurityConfigTest` | Vérifier les règles de sécurité couvertes par la suite |
+| **Validation et modèle** | `ValidationUtilsTest`, `DomainModelTest` | Contrôler les validations et le comportement des entités |
+| **Intégration MySQL / JPA** | `RepositoryIntegrationTests` | Tester les repositories `User`, `Contact` et `PasswordResetToken` avec une base MySQL de test |
+| **Démarrage Spring Boot** | `SqlApplicationTests` | Vérifier le chargement du contexte Spring |
+
+Le nombre de tests **par catégorie** n'est pas indiqué ici : seul le total de 163 a été relevé dans les journaux de la campagne.
+
+### Exécuter les tests en local
+
+Sous Windows, avec **Docker Desktop démarré** pour les tests d'intégration :
+
+```powershell
+.\gradlew.bat clean test --no-daemon
+```
+
+Sous Linux / macOS :
+
+```bash
+./gradlew clean test --no-daemon
+```
+
+Après exécution, le rapport HTML Gradle est généré dans :
+
+```text
+build/reports/tests/test/index.html
+```
+
+Les tests d'intégration utilisent une **base MySQL isolée** fournie par Testcontainers, avec création du schéma JPA dans le contexte de test. Cette configuration ne doit pas être réutilisée sur une base contenant des données réelles.
+
+### Intégration continue avec GitHub Actions
+
+Le workflow [`.github/workflows/test.yml`](.github/workflows/test.yml) exécute automatiquement la compilation et les tests lors des `push` et des pull requests :
+
+1. Récupération du code du dépôt.
+2. Installation de Java 17 et configuration de Gradle.
+3. Exécution de `./gradlew clean test --no-daemon`.
+4. Affichage du résultat dans l'onglet **Actions** de GitHub.
+
+> Un workflow réussi confirme que la suite actuellement configurée est passée ; il ne constitue pas à lui seul une garantie de sécurité ou de couverture complète de l'application.
+
 ## 🚀 Installation et exécution
 
 ### Prérequis
@@ -149,11 +202,9 @@ SQL2/
 ### 1. Récupérer le projet
 
 ```powershell
-git clone <URL_DU_REPOSITORY>
-cd <NOM_DU_DOSSIER>
+git clone https://github.com/Caze1127/gestionnaire-contacts-spring-boot.git
+cd gestionnaire-contacts-spring-boot
 ```
-
-Remplacer ces deux valeurs par l'URL et le nom du repository une fois celui-ci créé sur GitHub.
 
 ### 2. Configurer la base de données
 
@@ -196,7 +247,7 @@ Les comptes créés depuis l'inscription ont le rôle `USER` ; les fonctions d'a
 .\gradlew.bat test
 ```
 
-Le code inclut un test de démarrage de contexte Spring et une configuration Testcontainers/MySQL. **La réussite de l'ensemble des tests n'a pas été vérifiée pour cette publication** ; Docker et des dépendances compatibles sont nécessaires pour les tests qui démarrent MySQL.
+La suite inclut des tests de contrôleurs, de services, de validation, de sécurité, de modèle et d'intégration MySQL. Consulte la section [**Tests automatisés et intégration continue**](#-tests-automatisés-et-intégration-continue) pour le bilan et les détails. Docker est nécessaire pour les tests qui démarrent MySQL avec Testcontainers.
 
 ## 🔐 Sécurité et limites actuelles
 
@@ -211,7 +262,7 @@ Le code inclut un test de démarrage de contexte Spring et une configuration Tes
 ## 📌 Pistes d'amélioration
 
 - Réactiver et intégrer correctement la protection CSRF.
-- Ajouter des tests automatisés métier, API et sécurité.
+- Étendre les tests aux cas limites, aux scénarios de sécurité supplémentaires et aux imports CSV volumineux.
 - Envoyer les liens de réinitialisation par e-mail au moyen d'un service adapté.
 - Mettre en place une gestion de configuration par environnement et une procédure d'initialisation du premier administrateur.
 - Ajouter la pagination des contacts, une validation des imports CSV et des messages d'erreur plus explicites.
